@@ -20,7 +20,7 @@ def shift_timestamp_line(line, delta):
 def shift_subtitles(input_path, output_path, seconds_shift):
     delta = timedelta(seconds=seconds_shift)
 
-    with open(input_path, 'r', encoding='utf-8') as infile:
+    with open(input_path, 'r', encoding='utf-8', errors='replace') as infile:
         lines = infile.readlines()
 
     with open(output_path, 'w', encoding='utf-8') as outfile:
